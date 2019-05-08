@@ -18,5 +18,5 @@ const vm = new Vue({
           complete: true
         }
       ]
-    }
+    },
   })

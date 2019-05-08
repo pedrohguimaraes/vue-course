@@ -23,9 +23,18 @@
         {{nome}} : {{role}}
       </p>
     </template>
+
+    <template >
+      <p>
+        {{products}}
+      </p>
+    </template>
+    <button v-on:click="listProduct">Listar produtos</button>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Requests</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  
+  <div id="app">
+    <template v-if="security" >
+      <ul>
+        <li v-for="product in products">
+          {{product.id}} - {{product.name}}
+        </li>
+      </ul>
+    </template>
+    <button v-on:click="listProduct">Listar produtos</button>
+
+    <form @submit.prevent="storeProduct" action="http://127.0.0.1:5500/requests/index.html" method="post">
+      <p>
+        <input v-model="product.name" type="text" id="name" name="name" placeholder="Name" />
+      </p>
+      <p>
+        <input v-model="product.fabricator_id" type="text" id="fabricator_id" name="fabricator_id" placeholder="Fabricator"/>
+      </p>
+      <button type="submit">Cadastrar produto</button>
+    </form>
+
+
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
